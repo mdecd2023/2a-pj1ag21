@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='progress.html'>progress</a><li class='has-children'><a href='心得.html'>心得</a><ul class='dropdown'><li><a href='41023116吳勁毅心得.html'>41023116吳勁毅心得</a><li><a href='41023137.html'>41023137</a></li></ul><li><a href='Note.html'>Note</a><li class='has-children'><a href='tutorial1.html'>tutorial1</a><ul class='dropdown'><li><a href='tutorial1 問題.html'>tutorial1 問題</a><li><a href='tutorial1 心得.html'>tutorial1 心得</a></li>
+                     <li><a href='About.html'>About</a><li><a href='progress.html'>progress</a><li class='has-children'><a href='心得.html'>心得</a><ul class='dropdown'><li><a href='41023116吳勁毅心得.html'>41023116吳勁毅心得</a><li><a href='41023137.html'>41023137</a></li></ul><li><a href='Note.html'>Note</a><li class='has-children'><a href='tutorial1.html'>tutorial1</a><ul class='dropdown'><li><a href='問題.html'>問題</a><li><a href='tutorial1 心得.html'>tutorial1 心得</a></li>
                       </ul>
                 </nav>
               </div>
@@ -141,17 +141,29 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">tutorial1 << <a href='tutorial1.html'>Previous</a> <a href='tutorial1 心得.html'>Next</a> >> tutorial1 心得<br /><h1>tutorial1 問題</h1>
-<p></p>
-<p><strong>1.什麼是</strong></p>
+    <div id="tipue_search_content">tutorial1 << <a href='tutorial1.html'>Previous</a> <a href='tutorial1 心得.html'>Next</a> >> tutorial1 心得<br /><h1>問題</h1>
 <p><strong></strong></p>
+<p><strong>1.在 coppeliasim 中, scene 與 model 有何不同?</strong></p>
+<p>ANS:</p>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span class="Y2IQFc" lang="zh-TW">Scene:是指CoppeliaSim中<span style="color: #ff0000;">包含多個對象的三維環境</span>，它是一個虛擬世界，可以在其中添加、移動和編輯各種對象，如機器人、傳感器、物體等。<br/>場景包含了所有的對象和它們之間的關係，可以通過場景來模擬和仿真各種機器人和自動化系統。
+
+Model:則是<span style="color: #ff0000;">場景中的一個具體對象</span>，可以是機器人、傳感器、物體等。<br/>每個模型都是由一個或多個三維模型組成，每個模型都可以有自己的運動學、動力學、碰撞檢測等屬性，並且可以與其他模型進行交互。<br/>在CoppeliaSim中，可以通過在場景中添加、複製、移動和刪除模型來創建自己的虛擬世界。
+
+因此，Scene內含多個model，而model是scene中的一個個獨立的東西。在CoppeliaSim中，通過編輯場景和模型來創建複雜的仿真係統和機器人控制應用程序。</span></pre>
 <p><strong></strong></p>
+<p><strong>2.在CoppeliaSim 中, 何謂 clean model? </strong><br/><strong></strong></p>
 <p><strong></strong></p>
+<p>ANS:</p>
+<p>在CoppeliaSim中，clean model是一個<span style="color: #ff0000;">沒有任何物件或環境設定的模型</span>。這個模型通常用作建立新場景的起點，並且可以通過從頭開始添加所需的物件和環境設定來構建完整的場景。<span>使用clean model的好處是，你可以<span style="color: #ff0000;">從頭開始建立自己的場景</span>，沒有任何預設物件和環境干擾。這使得創建複雜的場景更加容易，因為你可以<span style="color: #ff0000;">自由地添加和設置你需要的物件和環境設定</span>，而<span style="color: #ff0000;">不必先刪除</span>現有的物件或環境設定。</span></p>
 <p><strong></strong></p>
+<p><strong>3.</strong><strong>在CoppeliaSim scene 中,如何利用 lua 以及 python 建立 primitive type object, 並利用程式設定物件位置?</strong></p>
+<p>ANS:</p>
 <p><strong></strong></p>
-<p><strong>2.<em>CoppeliaSim中的Scene與Model有何不同?</em></strong></p>
-<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="翻譯" dir="ltr"><span class="Y2IQFc" lang="zh-TW"><strong>  ANS:</strong><br/> <strong><em> <br/></em></strong></span><span class="Y2IQFc" lang="zh-TW"><strong>  </strong><strong>Scene</strong><em><strong>:</strong></em></span><span class="Y2IQFc" lang="zh-TW">是一個包含了多個模型和環境元素的虛擬環境，它可以用來模擬現實世界中的場景。<br/>        在CoppeliaSim中，您可以使用 Scene來創建、編輯和保存整個場景。<br/>        可以向場景中添加不同的東西，例如機器人、物體、傳感器、燈光等，並且可以控制它們的屬性和動作。</span></pre>
-<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="翻譯" dir="ltr"><span class="Y2IQFc" lang="zh-TW"><em><strong><br/><br/>  </strong></em><strong>Model</strong><em><strong>:</strong></em></span><span class="Y2IQFc" lang="zh-TW">是CoppeliaSim中的一個基本概念，它是場景中的一個單獨的對象。<br/>        模型可以是機器人、物體、傳感器等等。<br/>        每個模型都有一個唯一的名稱和一個屬性集，可以使用這些屬性來設置模型的位置、旋轉、大小、形狀等等。<br/>        每個模型還可以包含一些腳本，用於控制模型的行為。</span></pre><br />tutorial1 << <a href='tutorial1.html'>Previous</a> <a href='tutorial1 心得.html'>Next</a> >> tutorial1 心得</div>
+<p><strong>4.<span>CoppeliaSim .ttt 檔案格式與 .simscene.xml 檔案格式有何不同?</span></strong></p>
+<p>ANS:</p>
+<p><code>.ttt</code>文件是CoppeliaSim的舊格式，是<span style="color: #ff0000;">二進制文件</span>，其中包含仿真環境的所有元素和設置。<code>.<span style="color: #ff0000;">ttt</span></code><span style="color: #ff0000;">文件不能直接使用文本編輯器進行編輯</span>，需要使用CoppeliaSim的GUI進行操作。此外，<code>.ttt</code>文件中可能包含有一些CoppeliaSim的腳本代碼。</p>
+<p><code>.simscene.xml</code>文件是CoppeliaSim的新格式，是一個<span style="color: #ff0000;">純文本XML文件</span>。它與<code>.ttt</code>文件具有相同的功能，但是它<span style="color: #ff0000;">更易於人類閱讀和編輯</span>，<span style="color: #ff0000;">可以使用文本編輯器進行編輯</span>。此外，<code>.simscene.xml</code>文件不包含CoppeliaSim的腳本代碼，這使得它更加通用且易於與其他工具進行集成。</p>
+<p></p><br />tutorial1 << <a href='tutorial1.html'>Previous</a> <a href='tutorial1 心得.html'>Next</a> >> tutorial1 心得</div>
         
     <!-- footer -->
       <div class="container">
