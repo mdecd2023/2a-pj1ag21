@@ -158,7 +158,15 @@ Model:則是<span style="color: #ff0000;">場景中的一個具體對象</span>�
 <p><strong></strong></p>
 <p><strong>3.</strong><strong>在CoppeliaSim scene 中,如何利用 lua 以及 python 建立 primitive type object, 並利用程式設定物件位置?</strong></p>
 <p>ANS:</p>
-<p><strong></strong></p>
+<p>在CoppeliaSim中，可以使用Lua或Python腳本建立基本物件並設置其位置。</p>
+<p>以下是使用Lua腳本創建基本物件的示例：</p>
+<p>-- Create a sphere primitive with a radius of 0.5<br/>objectHandle = sim.createPureShape(1, 18, {0.5, 0.5, 0.5}, 0.01)</p>
+<p>-- Set the position of the object to (1, 2, 3)<br/>sim.setObjectPosition(objectHandle, -1, {1, 2, 3})</p>
+<p>以上程式碼創建了一個半徑為0.5的球形物件，然後將其位置設置為(1,2,3)。</p>
+<p>以下是使用Python腳本創建基本物件的示例：</p>
+<p>import sim</p>
+<p># Create a sphere primitive with a radius of 0.5<br/>objectHandle = sim.simCreatePureShape(1, 18, [0.5, 0.5, 0.5], 0.01)</p>
+<p># Set the position of the object to (1, 2, 3)<br/>sim.simSetObjectPosition(objectHandle, -1, [1, 2, 3])</p>
 <p><strong>4.<span>CoppeliaSim .ttt 檔案格式與 .simscene.xml 檔案格式有何不同?</span></strong></p>
 <p>ANS:</p>
 <p><code>.ttt</code>文件是CoppeliaSim的舊格式，是<span style="color: #ff0000;">二進制文件</span>，其中包含仿真環境的所有元素和設置。<code>.<span style="color: #ff0000;">ttt</span></code><span style="color: #ff0000;">文件不能直接使用文本編輯器進行編輯</span>，需要使用CoppeliaSim的GUI進行操作。此外，<code>.ttt</code>文件中可能包含有一些CoppeliaSim的腳本代碼。</p>
