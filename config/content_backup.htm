@@ -42,13 +42,15 @@
 <div></div>
 <div>
 <h1>tutorial1</h1>
-<p></p>
+<p>tutorial1簡報:<a href="/downloads/BubbleRob ag21.pptx">BubbleRob ag21.pptx</a></p>
 <p><strong>1.球體碰撞模擬</strong></p>
-<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="winkVideoData_w2_1" height="600" muted="true" width="800"></video></div>
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="winkVideoData_w2_1" height="600" muted="true" width="800"><source src="/downloads/BALL.mp4" type="video/mp4"/></video>
+<p></p>
 <div class="winkVideoContainerClass"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/ZG5JdlbmAwc" title="YouTube video player" width="560"></iframe>
 <p><strong>檔案:<a href="https://mdecd2023.github.io/2a-pj1ag21/downloads/BALL.ttt">BALL.ttt</a></strong></p>
 <p><strong>2.建立馬達,輪子,感測器及程式</strong></p>
-<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="winkVideoData_w2_1" height="600" muted="true" width="800"></video></div>
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="winkVideoData_w2_1" height="600" muted="true" width="800"><source src="/downloads/wheel.mp4" type="video/mp4"/></video>
+<p></p>
 <div class="winkVideoContainerClass"></div>
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/t3RU-6qpDvE" title="YouTube video player" width="560"></iframe></div>
 <div class="winkVideoContainerClass"> </div>
@@ -56,8 +58,70 @@
 <div class="winkVideoContainerClass"><strong>         <a href="https://mdecd2023.github.io/2a-pj1ag21/downloads/Slider.ttt">Slider.ttt</a></strong></div>
 <div class="winkVideoContainerClass"><strong>         <a href="https://mdecd2023.github.io/2a-pj1ag21/downloads/BubbleRob.ttt">BubbleRob.ttt</a></strong></div>
 <div class="winkVideoContainerClass"><strong></strong></div>
-<div class="winkVideoContainerClass">
+<div class="winkVideoContainerClass"></div>
+</div>
+</div><h2>問題</h2>
+<p><strong></strong></p>
+<p><strong>1.在 coppeliasim 中, scene 與 model 有何不同?</strong></p>
+<p>ANS:</p>
+<pre class="tw-data-text tw-text-large tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span class="Y2IQFc" lang="zh-TW">Scene:是指CoppeliaSim中<span style="color: #ff0000;">包含多個對象的三維環境</span>，它是一個虛擬世界，可以在其中添加、移動和編輯各種對象，如機器人、傳感器、物體等。<br/>場景包含了所有的對象和它們之間的關係，可以通過場景來模擬和仿真各種機器人和自動化系統。
+
+Model:則是<span style="color: #ff0000;">場景中的一個具體對象</span>，可以是機器人、傳感器、物體等。<br/>每個模型都是由一個或多個三維模型組成，每個模型都可以有自己的運動學、動力學、碰撞檢測等屬性，並且可以與其他模型進行交互。<br/>在CoppeliaSim中，可以通過在場景中添加、複製、移動和刪除模型來創建自己的虛擬世界。
+
+因此，Scene內含多個model，而model是scene中的一個個獨立的東西。在CoppeliaSim中，通過編輯場景和模型來創建複雜的仿真係統和機器人控制應用程序。</span></pre>
+<p><strong></strong></p>
+<p><strong>2.在CoppeliaSim 中, 何謂 clean model? </strong><br/><strong></strong></p>
+<p><strong></strong></p>
+<p>ANS:</p>
+<p>在CoppeliaSim中，clean model是一個<span style="color: #ff0000;">沒有任何物件或環境設定的模型</span>。這個模型通常用作建立新場景的起點，並且可以通過從頭開始添加所需的物件和環境設定來構建完整的場景。<span>使用clean model的好處是，你可以<span style="color: #ff0000;">從頭開始建立自己的場景</span>，沒有任何預設物件和環境干擾。這使得創建複雜的場景更加容易，因為你可以<span style="color: #ff0000;">自由地添加和設置你需要的物件和環境設定</span>，而<span style="color: #ff0000;">不必先刪除</span>現有的物件或環境設定。</span></p>
+<p><strong></strong></p>
+<p><strong>3.</strong><strong>在CoppeliaSim scene 中,如何利用 lua 以及 python 建立 primitive type object, 並利用程式設定物件位置?</strong></p>
+<p>ANS:</p>
+<p>在CoppeliaSim中，可以使用Lua或Python腳本建立基本物件並設置其位置。</p>
+<p>以下是使用Lua腳本創建基本物件的示例：</p>
+<p>-- Create a sphere primitive with a radius of 0.5<br/>objectHandle = sim.createPureShape(1, 18, {0.5, 0.5, 0.5}, 0.01)</p>
+<p>-- Set the position of the object to (1, 2, 3)<br/>sim.setObjectPosition(objectHandle, -1, {1, 2, 3})</p>
+<p>以上程式碼創建了一個半徑為0.5的球形物件，然後將其位置設置為(1,2,3)。</p>
+<p>以下是使用Python腳本創建基本物件的示例：</p>
+<p>import sim</p>
+<p># Create a sphere primitive with a radius of 0.5<br/>objectHandle = sim.simCreatePureShape(1, 18, [0.5, 0.5, 0.5], 0.01)</p>
+<p># Set the position of the object to (1, 2, 3)<br/>sim.simSetObjectPosition(objectHandle, -1, [1, 2, 3])</p>
+<p><strong>4.<span>CoppeliaSim .ttt 檔案格式與 .simscene.xml 檔案格式有何不同?</span></strong></p>
+<p>ANS:</p>
+<p><code>.ttt</code>文件是CoppeliaSim的舊格式，是<span style="color: #ff0000;">二進制文件</span>，其中包含仿真環境的所有元素和設置。<code>.<span style="color: #ff0000;">ttt</span></code><span style="color: #ff0000;">文件不能直接使用文本編輯器進行編輯</span>，需要使用CoppeliaSim的GUI進行操作。此外，<code>.ttt</code>文件中可能包含有一些CoppeliaSim的腳本代碼。</p>
+<p><code>.simscene.xml</code>文件是CoppeliaSim的新格式，是一個<span style="color: #ff0000;">純文本XML文件</span>。它與<code>.ttt</code>文件具有相同的功能，但是它<span style="color: #ff0000;">更易於人類閱讀和編輯</span>，<span style="color: #ff0000;">可以使用文本編輯器進行編輯</span>。此外，<code>.simscene.xml</code>文件不包含CoppeliaSim的腳本代碼，這使得它更加通用且易於與其他工具進行集成。</p>
+<p></p>
 <h2>tutorial1 心得</h2>
 <p></p>
 <p><strong>41023116吳勁毅:</strong>起初做的時候還滿滿順利,但是做到一些步驟之後卡住了,做到半夜還沒結束,但好在有朋友的幫忙,讓我可以順利做完</p>
-<p><strong>41023137林峻源:</strong>製作過程中遇到一些小問題，像是property的value一開始我不知道要如何更改，不過後來在經過同學的指教之後都順利解決了</p></div></div></div></div></div>
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<p><strong>41023137林峻源:</strong>製作過程中遇到一些小問題，像是property的value一開始我不知道要如何更改，不過後來在經過同學的教導之後都順利解決了</p></div></div></div></div>
+=======
+<h1>專案規劃</h1>
+<p></p>
+<ol>
+<li>
+<p><span style="background-color: #ffff00;">確定專題和目標</span>：確定專題和目標，這通常是由老師或導師指定或學生自己選擇的。</p>
+<span>確定你的專題和目標，可以幫助你更好地了解你需要進行的工作</span></li>
+<li>
+<p><span style="background-color: #ffff00;">搜集信息</span>：收集所有有關專題和目標的資料，這可能包括文獻和報告，調查結果，實驗數據等 。</p>
+</li>
+<li>
+<p><span style="background-color: #ffff00;">制定計劃</span>：制定一個詳細的計劃，包括時間表，預算和可行性分析。可制定<span>時間表，預算和可行性分析。這有助於確定必要的資源，例如人力，物資和技術，並確保你在時間和預算方面能夠順利完成你的專案。</span></p>
+</li>
+<li>
+<p><span style="background-color: #ffff00;">確定研究方法</span>：確定研究方法，以確保你能夠完成所需的工作。問卷調查，實驗，測試等。</p>
+</li>
+<li>
+<p><span style="background-color: #ffff00;">準備文獻綜述和研究報告</span>：這是專題研究中必須進行的步驟。這需要你進行文獻綜述和報告撰寫，以分析和評估你所收集到的所有資訊。</p>
+</li>
+<li><span><span style="background-color: #ffff00;">分析資料</span>：對收集到的資料和信息進行分析，以得出結論和結果。包括使用統計軟件進行分析和繪製圖表</span></li>
+<li>
+<p><span style="background-color: #ffff00;">完成專案</span>：完成專案，並準備演示文稿或口頭報告。展示你所完成的工作。</p>
+</li>
+<li>
+<p><span style="background-color: #ffff00;">評估和報告</span>：評估你的工作和成果，並撰寫一份綜合報告。這可以幫助你理解你的成果和過程。</p>
+</li>
+</ol>
+<p>專案規劃需要詳細的計劃和準備，並且可能需要進一步的研究和分析。同時，專案規劃需要學生和老師的密切合作和溝通，以確保專案能夠成功完成。</p>
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; b6710c5dafcf6f467bbce91aaa0ee9ce09d9c150
